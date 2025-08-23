@@ -4,11 +4,14 @@ dotenv.config()
 import express from 'express'
 import cors from 'cors'
 import connectDB from './config/db.js';
+import routes from './routes/index.route.js';
 
 const app = express();
 
 app.use(express.json())
 app.use(cors());
+
+app.use("/api/v1.0", routes);
 
 app.get("/", (req, res) => {
   res.send("hello world")
