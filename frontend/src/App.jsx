@@ -4,6 +4,10 @@ import { AuthContext } from "./context/AuthContext";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Exam from "./pages/Exam";
+import Results from "./pages/Results";
+import ExamDashboard from "./pages/ExamDashboard";
+import ViewAllResults from "./pages/ViewAllResults";
 
 function Protected({ children }) {
   const { user, loading } = useContext(AuthContext);
@@ -21,6 +25,39 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        <Route
+          path="/"
+          element={
+            <Protected>
+              <ExamDashboard />
+            </Protected>
+          }
+        />
+        <Route
+          path="/exam/start"
+          element={
+            <Protected>
+              <Exam />
+            </Protected>
+          }
+        />
+        <Route
+          path="/results"
+          element={
+            <Protected>
+              <Results />
+            </Protected>
+          }
+        />
+        <Route
+          path="/view-all-results"
+          element={
+            <Protected>
+              <ViewAllResults />
+            </Protected>
+          }
+        />
       </Routes>
     </div>
   );
