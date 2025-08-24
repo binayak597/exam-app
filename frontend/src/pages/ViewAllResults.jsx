@@ -9,7 +9,8 @@ import {
   BookOpen,
   LogOut
 } from "lucide-react";
-import API from "../api/axios";
+
+import api from "../api/axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -32,7 +33,7 @@ const ViewAllResults = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const res = await API.get("/results");
+        const res = await api.get("/results");
         setResults(res.data);
         toast.success("Exam results fetched successfully");
       } catch (err) {
