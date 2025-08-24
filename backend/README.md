@@ -28,7 +28,7 @@ It provides authentication, randomized exam questions, exam submission, and resu
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/binayak597/exam-app.git
-cd exam-app
+cd exam-app/backend
 ```
 
 ### 2. Install dependencies
